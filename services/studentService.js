@@ -13,3 +13,7 @@ export const updateStudent = async (student) => {
     const updatedStudent = await studentModel.update(student);
     return updatedStudent;
 }
+export const deleteStudent = async (id) => {
+    const deletedStudent = await studentModel.deleteStudent(id);
+    return deletedStudent;
+}
