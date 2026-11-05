@@ -5,6 +5,23 @@ export const fetchAllBooks = async () => {
   const [rows] = await pool.execute("SELECT * FROM book");
   return rows;
 };
+
+
+//Find book by id
+export const findBookById = async (id) => {
+  const [rows] = await pool.query("SELECT * FROM book WHERE id = ?",
+    [id]
+  );
+  return rows;
+};
+
+export const findBookByNameAndAuthor = async (book) => {
+  const [rows] = await pool.query( "SELECT * FROM book WHERE name = ? AND author = ?",
+    [book.name, book.author]
+  );
+  return rows;
+};
+
 // sa model mag iinsert ng book    model>service>controller>route
 
 //Insert
