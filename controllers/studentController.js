@@ -18,8 +18,8 @@ export const createStudent = async (req, res) => {
         });
     } catch(e){
         console.log(e);
-        res.status(500).json({
-            error: 'Internal Server Errror'
+        res.status(e.statusCode).json({
+            error: e.message
         }); 
     }
 }
@@ -37,8 +37,8 @@ export const editStudent = async (req, res) => {
         });
     } catch(e){
         console.log(e);
-        res.status(500).json({
-            error: 'Internal Server Errror'
+        res.status(e.statusCode).json({
+            error: e.message
         });
 
 }    } 
@@ -54,8 +54,8 @@ export const deleteStudent = async (req, res) => {
         });
     } catch(e){
         console.log(e);
-        res.status(500).json({
-            error: 'Internal Server Errror'
+        res.status(e.statusCode).json({
+            error: e.message
         });
     }
 }
